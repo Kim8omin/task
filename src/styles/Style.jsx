@@ -1,25 +1,24 @@
 import styled from "styled-components";
 
-export const LayerWrapper = styled.div`
+const CardComponentLayer = styled.div`
   display: flex;
-  flex-direction: column;
-  flex-direction: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-bottom: 30%;
 `;
 
-export const CardLayer = styled.div`
+const CardLayer = styled.div`
   width: 200px;
   height: 400px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   perspective: 1000px;
 `;
 
-export const CardWrapper = styled.div`
+const CardWrapper = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
@@ -35,7 +34,7 @@ export const CardWrapper = styled.div`
   }
 `;
 
-export const Front = styled.div`
+const Front = styled.div`
   width: 100%;
   height: 100%;
   z-index: 2;
@@ -56,7 +55,7 @@ export const Front = styled.div`
   }
 `;
 
-export const Back = styled.div`
+const Back = styled.div`
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -69,8 +68,37 @@ export const Back = styled.div`
   transform: rotateY(180deg);
 `;
 
-export const BackImage = styled.img`
+const BackImage = styled.img`
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
 `;
+
+const LayerWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-height: 50%;
+  margin-top: 30px;
+  padding: 10px;
+
+  h2 {
+    font-size: 1.8rem;
+
+    @media (max-height: 570px) {
+      display: none;
+    }
+  }
+`;
+
+export {
+  CardComponentLayer,
+  CardLayer,
+  CardWrapper,
+  Front,
+  Back,
+  BackImage,
+  LayerWrapper,
+};
